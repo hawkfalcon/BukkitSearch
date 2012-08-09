@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+<!-- Search on enter -->
+  <script>
+    function onLoad() {
+      document.getElementById("mytextfield").focus();
+    }
+
+    function onKeyPress(e) {
+      if (e.keyCode == 13) {
+        openResults();
+      }
+    }
+
+    function openHomePage() {
+      window.open("http://dev.bukkit.org/");
+    }
+
+    function openResults() {
+      window.open("http://dev.bukkit.org/search/?search=" + encodeURIComponent(document.getElementById("mytextfield").value));
+    }
+  </script>
+    <!-- Change between Bukkit and Bukkitdev -->
+  <SCRIPT LANGUAGE="javascript">
+function NextPage()
+{
+window.open ('bukkitsearch.html','_self')
+}
+</SCRIPT>
+</head>
+  <!-- Image link-->
+<body onload="onLoad();">
+  <img src="png-3.png" onclick="openHomePage();" style="border-width: 0px; cursor: pointer" /><br>
+  <br>
+    <!-- Search Bar -->
+    <form><center><input type="search" id="mytextfield" name="mytextfield" placeholder="Search..." autofocus size="45" onkeypress="onKeyPress(event);" /></center></form>
+    <br>
+  <!-- Switch between html buttons-->
+    <form>
+<center><input type="radio" id="searchdev" value="BukkitDev" CHECKED /> <font face="Trebuchet MS"> BukkitDev </font>   <input type="radio" id="search" value="BukkitForums" onclick="NextPage()"/><font face ="Trebuchet MS">  Forums</font></center></form>
+<!--style="display:block"-->
+</body>
+</html>
